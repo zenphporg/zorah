@@ -6,7 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Zen\Zorah\Console\TranslationGenerator;
 use Zen\Zorah\Contracts\Zorah as ZorahContract;
 
-class ZoraServiceProvider extends ServiceProvider
+class ZorahServiceProvider extends ServiceProvider
 {
   /**
    * Boot up our service provider.
