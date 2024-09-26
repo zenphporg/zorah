@@ -1,5 +1,17 @@
 # Release Notes
 
+## [1.0.1](https://github.com/zenphporg/zorah/compare/v1.0.0...v1.0.1) (2024-09-26)
+
+
+### Bug Fixes
+
+* added missing branch-alias and stability ([43e5eb2](https://github.com/zenphporg/zorah/commit/43e5eb2abc52abb0ba229cd52db160c07d97c847))
+
+
+### Maintenance
+
+* adjust prettier and gitattributes ([a59217f](https://github.com/zenphporg/zorah/commit/a59217fdf6f3cd10543862ee1b7b829c8d78e661))
+
 # 1.0.0 (2024-09-26)
 
 
