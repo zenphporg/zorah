@@ -1,0 +1,46 @@
+{
+  "name": "zenphp/zorah",
+  "description": "Add your Laravel language translations to your asset pipeline for use in Javascript packages like Vue or React.",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "SMV",
+      "email": "secondman@zenphp.org"
+    }
+  ],
+  "require": {
+    "php": "^8.3",
+    "illuminate/console": "^11.24",
+    "illuminate/filesystem": "^11.24",
+    "illuminate/support": "^11.24"
+  },
+  "require-dev": {
+    "zenphp/fixr": "^1.0.2",
+    "pestphp/pest": "^3.2",
+    "pestphp/pest-plugin-type-coverage": "^3.0",
+    "pestphp/pest-plugin-laravel": "^3.0",
+    "mockery/mockery": "^1.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Zen\\Zorah\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Zorah\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Zen\\Zorah\\ZorahServiceProvider"
+      ]
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  }
+}
