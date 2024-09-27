@@ -1,5 +1,17 @@
 # Release Notes
 
+## [1.0.2](https://github.com/zenphporg/zorah/compare/v1.0.1...v1.0.2) (2024-09-27)
+
+
+### Code Refactoring
+
+* add typescript support ([cd000a4](https://github.com/zenphporg/zorah/commit/cd000a4e7e6d92f6cca076aae167959ab27f72ce))
+
+
+### Maintenance
+
+* styling ([1489dd9](https://github.com/zenphporg/zorah/commit/1489dd930d7f55c05e3e4c232a51672e0c59e3c7))
+
 ## [1.0.1](https://github.com/zenphporg/zorah/compare/v1.0.0...v1.0.1) (2024-09-26)
 
 
