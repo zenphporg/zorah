@@ -33,7 +33,7 @@ declare module '@vue/runtime-core' {
     trans: (
       key: string,
       replace?: { [key: string]: string | number },
-      config?: import('zorah-js').ZorahConfig
+      config?: import('zorah-js').ZorahConfig,
     ) => string;
   }
 }
