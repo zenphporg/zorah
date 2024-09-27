@@ -1,13 +1,36 @@
 {
-  "private": true,
-  "main": "dist/index.js",
-  "browser": "dist/index.js",
-  "module": "dist/index.js",
+  "name": "zorah-js",
+  "version": "1.0.1",
+  "files": [
+    "src/js/index.d.ts",
+    "dist"
+  ],
+  "type": "module",
+  "source": "./src/js/index.js",
+  "exports": {
+    "types": "./src/js/index.d.ts",
+    "default": "./dist/index.js"
+  },
+  "module": "./dist/index.esm.js",
+  "types": "./src/js/index.d.ts",
   "scripts": {
     "lint": "./vendor/bin/fixr",
     "test": "./vendor/bin/pest",
     "fix": "bunx lint-staged",
-    "cb": "composer update && bun update"
+    "cb": "composer update && bun update",
+    "build": "bun build:esm && bun build:umd",
+    "build:esm": "microbundle -i ./src/js/index.js -o ./dist/index.js --format modern,esm --no-sourcemap --no-generateTypes --external none",
+    "build:npm": "microbundle -i ./src/js/index.js -o ./dist/index.js --format modern,esm --no-sourcemap --no-generateTypes",
+    "build:umd": "microbundle -i ./src/js/browser.js -o ./dist/trans.js --format umd --name trans --no-sourcemap --no-generateTypes --external none",
+    "types": "vitest --typecheck",
+    "format": "prettier . --write",
+    "prebuild": "rm -r ./dist/*"
+  },
+  "mangle": {
+    "regex": "^_(?!query)"
+  },
+  "dependencies": {
+    "qs": "~6.9.7"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
@@ -16,8 +39,13 @@
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/gitlab": "^13.2.1",
     "husky": "^9.1.6",
+    "jsdom": "^25.0.1",
     "lint-staged": "^15.2.10",
-    "semantic-release": "^23.1.1"
+    "microbundle": "^0.15.1",
+    "prettier": "^3.3.3",
+    "semantic-release": "^23.1.1",
+    "typescript": "^5.6.2",
+    "vitest": "^2.1.1"
   },
   "lint-staged": {
     "*.{js,json,md}": "prettier --write .",
