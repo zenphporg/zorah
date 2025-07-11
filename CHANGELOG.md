@@ -1,5 +1,17 @@
 # Release Notes
 
+## [1.0.4](https://github.com/zenphporg/zorah/compare/v1.0.3...v1.0.4) (2025-07-11)
+
+
+### Bug Fixes
+
+* missing security and dependabot ([2a99aa8](https://github.com/zenphporg/zorah/commit/2a99aa825b8c4a4cf8a163349eccf57813e21fd3))
+
+
+### Maintenance
+
+* **readme:** badge type for tests ([977f161](https://github.com/zenphporg/zorah/commit/977f16169b6ad1ac449e7599b9f51bbb0bded7df))
+
 ## [1.0.3](https://github.com/zenphporg/zorah/compare/v1.0.2...v1.0.3) (2025-07-11)
 
 
