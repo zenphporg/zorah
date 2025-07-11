@@ -1,5 +1,17 @@
 # Release Notes
 
+## [1.0.5](https://github.com/zenphporg/zorah/compare/v1.0.4...v1.0.5) (2025-07-11)
+
+
+### Bug Fixes
+
+* **readme:** finalized badge fix ([656401a](https://github.com/zenphporg/zorah/commit/656401a80794388d56facac1b02975c5c0b6fa03))
+
+
+### Code Refactoring
+
+* **docs:** added docs and pr workflow ([c3263d1](https://github.com/zenphporg/zorah/commit/c3263d17bc87f682417e034a7bd4884181896de4))
+
 ## [1.0.4](https://github.com/zenphporg/zorah/compare/v1.0.3...v1.0.4) (2025-07-11)
 
 
