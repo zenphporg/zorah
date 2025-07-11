@@ -1,5 +1,21 @@
 # Release Notes
 
+## [1.0.3](https://github.com/zenphporg/zorah/compare/v1.0.2...v1.0.3) (2025-07-11)
+
+
+### Bug Fixes
+
+* **testing:** finally got all testing done ([10bcbc9](https://github.com/zenphporg/zorah/commit/10bcbc97976ac938217ed42a85829271844917db))
+
+
+### Maintenance
+
+* **release-config:** fix immutable error ([fa5a7c6](https://github.com/zenphporg/zorah/commit/fa5a7c69b30ace2662c5f4430f7982e9ddb47a0d))
+* style fix ([1077bfa](https://github.com/zenphporg/zorah/commit/1077bfaf157a1a61d13e5099d7db7ea45bc6ce90))
+* **workflows:** fix error in tests ([304d537](https://github.com/zenphporg/zorah/commit/304d5371ccf3167024e861e0dc25dc421753d5d5))
+* **workflows:** missing install in tests ([e7f8bc1](https://github.com/zenphporg/zorah/commit/e7f8bc1fdf8411ddf015ef76d51dcefa6cfa7326))
+* **workflows:** typo in tests ([66e9e9d](https://github.com/zenphporg/zorah/commit/66e9e9dec27b92f54181cb3fb9169ffeb8018419))
+
 ## [1.0.2](https://github.com/zenphporg/zorah/compare/v1.0.1...v1.0.2) (2024-09-27)
 
 
