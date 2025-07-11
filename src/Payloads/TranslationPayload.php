@@ -1,24 +1,28 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Zen\Zorah\Payloads;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
+use SplFileInfo;
 
 class TranslationPayload
 {
   /**
    * Compile all of the local translations.
    *
-   * @param  array  $locales
+   * @param  array<int, string>  $locales
+   * @return Collection<string, mixed>
    */
-  public static function compile($locales = []): Collection
+  public static function compile(array $locales = []): Collection
   {
-    $payload = new static;
+    $payload = new self;
 
     $translations = [];
 
-    foreach ($locales as $locale) { // suported locales
+    foreach ($locales as $locale) { // supported locales
       $translations[$locale] = [
         'php' => $payload->phpTranslations($locale),
         'json' => $payload->jsonTranslations($locale),
@@ -31,13 +35,13 @@ class TranslationPayload
   /**
    * Compile the PHP file translations.
    *
-   * @param  string  $locale
+   * @return Collection<string, mixed>
    */
-  private function phpTranslations($locale): Collection
+  private function phpTranslations(string $locale): Collection
   {
     $path = lang_path($locale);
 
-    return collect(File::allFiles($path))->flatMap(function ($file) use ($locale) {
+    return collect(File::allFiles($path))->flatMap(function (SplFileInfo $file) use ($locale) {
       $key = ($translation = $file->getBasename('.php'));
 
       return [$key => trans($translation, [], $locale)];
@@ -47,14 +51,21 @@ class TranslationPayload
   /**
    * Compile the JSON file translations.
    *
-   * @param  string  $locale
+   * @return array<string, mixed>
    */
-  private function jsonTranslations($locale): array
+  private function jsonTranslations(string $locale): array
   {
     $path = lang_path("$locale.json");
 
-    if (is_string($path) && is_readable($path)) {
-      return json_decode(file_get_contents($path), true);
+    if (is_readable($path)) {
+      $content = file_get_contents($path);
+      if ($content !== false) {
+        $decoded = json_decode($content, true);
+        if (is_array($decoded)) {
+          /** @var array<string, mixed> $decoded */
+          return $decoded;
+        }
+      }
     }
 
     return [];

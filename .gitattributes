@@ -16,6 +16,7 @@
 .prettierignore export-ignore
 babel.config.js export-ignore
 composer.lock export-ignore
-bun.lockb export-ignore
+bun.lock export-ignore
 phpunit.xml export-ignore
+phpstan.neon export-ignore
 release.config.js export-ignore

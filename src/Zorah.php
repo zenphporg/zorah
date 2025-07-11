@@ -1,24 +1,33 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Zen\Zorah;
 
 use Illuminate\Support\Facades\File;
+use SplFileInfo;
 use Zen\Zorah\Contracts\Zorah as ZorahContract;
 
 class Zorah implements ZorahContract
 {
   /**
    * Local cache property.
+   *
+   * @var array<string, mixed>
    */
   protected static array $cache = [];
 
   /**
    * Locales property array.
+   *
+   * @var array<int, string>
    */
   protected array $locales = [];
 
   /**
    * Local translations array.
+   *
+   * @var array<string, mixed>
    */
   protected array $translations = [];
 
@@ -30,12 +39,12 @@ class Zorah implements ZorahContract
     $this->locales = $this->makeLocales();
 
     if (app()->environment('production')) {
-      return $this->runProduction();
+      $this->runProduction();
+
+      return;
     }
 
     $this->translations = $this->makeTranslations();
-
-    return $this;
   }
 
   /**
@@ -55,6 +64,8 @@ class Zorah implements ZorahContract
   /**
    * Loop through lang directory and get all locales
    * that we need to process for the app.
+   *
+   * @return array<int, string>
    */
   public function makeLocales(): array
   {
@@ -62,9 +73,11 @@ class Zorah implements ZorahContract
 
     $directories = File::directories(lang_path());
 
-    foreach ($directories as $dir) {
-      $path = str_replace(lang_path().'/', '', $dir);
-      $locales[] = $path;
+    foreach ($directories as $directory) {
+      if (is_string($directory)) {
+        $path = str_replace(lang_path().'/', '', $directory);
+        $locales[] = $path;
+      }
     }
 
     return $locales;
@@ -80,6 +93,8 @@ class Zorah implements ZorahContract
 
   /**
    * Build our translations.
+   *
+   * @return array<string, mixed>
    */
   protected function makeTranslations(): array
   {
@@ -97,12 +112,14 @@ class Zorah implements ZorahContract
 
   /**
    * Rollup the PHP language vars.
+   *
+   * @return array<string, mixed>
    */
   protected function translatePhp(string $locale): array
   {
     $path = lang_path($locale);
 
-    return collect(File::allFiles($path))->flatMap(function ($file) use ($locale) {
+    return collect(File::allFiles($path))->flatMap(function (SplFileInfo $file) use ($locale) {
       $key = ($translation = $file->getBasename('.php'));
 
       return [$key => trans($translation, [], $locale)];
@@ -111,13 +128,22 @@ class Zorah implements ZorahContract
 
   /**
    * Rollup the JSON language vars.
+   *
+   * @return array<string, mixed>
    */
   protected function translateJson(string $locale): array
   {
     $path = lang_path("$locale.json");
 
-    if (is_string($path) && is_readable($path)) {
-      return json_decode(file_get_contents($path), true);
+    if (is_readable($path)) {
+      $content = file_get_contents($path);
+      if ($content !== false) {
+        $decoded = json_decode($content, true);
+        if (is_array($decoded)) {
+          /** @var array<string, mixed> $decoded */
+          return $decoded;
+        }
+      }
     }
 
     return [];
@@ -125,6 +151,8 @@ class Zorah implements ZorahContract
 
   /**
    * Convert this Zorah instance to an array.
+   *
+   * @return array<string, mixed>
    */
   public function toArray(): array
   {
@@ -135,6 +163,8 @@ class Zorah implements ZorahContract
 
   /**
    * Convert this Zorah instance into something JSON serializable.
+   *
+   * @return array<string, mixed>
    */
   public function jsonSerialize(): array
   {
@@ -148,6 +178,8 @@ class Zorah implements ZorahContract
    */
   public function toJson(int $options = 0): string
   {
-    return json_encode($this->jsonSerialize(), $options);
+    $json = json_encode($this->jsonSerialize(), $options);
+
+    return $json !== false ? $json : '{}';
   }
 }

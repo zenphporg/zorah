@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1752218663">
+  <project timestamp="1752218663">
+    <package name="Zen\Zorah\Console">
+      <file name="/Users/vince/Dev/zenphp/components/zorah/src/Console/TranslationGenerator.php">
+        <class name="Zen\Zorah\Console\TranslationGenerator" namespace="Zen\Zorah\Console">
+          <metrics complexity="8" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="22" coveredstatements="22" elements="26" coveredelements="26"/>
+        </class>
+        <line num="33" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="6"/>
+        <line num="38" type="stmt" count="6"/>
+        <line num="44" type="method" name="handle" visibility="public" complexity="2" crap="2" count="6"/>
+        <line num="46" type="stmt" count="6"/>
+        <line num="47" type="stmt" count="6"/>
+        <line num="48" type="stmt" count="1"/>
+        <line num="50" type="stmt" count="1"/>
+        <line num="53" type="stmt" count="5"/>
+        <line num="55" type="stmt" count="5"/>
+        <line num="57" type="stmt" count="5"/>
+        <line num="59" type="stmt" count="5"/>
+        <line num="65" type="method" name="generate" visibility="public" complexity="3" crap="3" count="5"/>
+        <line num="67" type="stmt" count="5"/>
+        <line num="69" type="stmt" count="5"/>
+        <line num="71" type="stmt" count="5"/>
+        <line num="72" type="stmt" count="5"/>
+        <line num="73" type="stmt" count="5"/>
+        <line num="74" type="stmt" count="5"/>
+        <line num="78" type="stmt" count="5"/>
+        <line num="80" type="stmt" count="5"/>
+        <line num="81" type="stmt" count="5"/>
+        <line num="89" type="stmt" count="5"/>
+        <line num="95" type="method" name="makeDirectory" visibility="protected" complexity="2" crap="2" count="5"/>
+        <line num="97" type="stmt" count="5"/>
+        <line num="98" type="stmt" count="1"/>
+        <line num="101" type="stmt" count="5"/>
+        <metrics loc="104" ncloc="77" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="22" coveredstatements="22" elements="26" coveredelements="26"/>
+      </file>
+    </package>
+    <file name="/Users/vince/Dev/zenphp/components/zorah/src/Contracts/Zorah.php">
+      <metrics loc="43" ncloc="21" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <package name="Zen\Zorah\Payloads">
+      <file name="/Users/vince/Dev/zenphp/components/zorah/src/Payloads/TranslationPayload.php">
+        <class name="Zen\Zorah\Payloads\TranslationPayload" namespace="Zen\Zorah\Payloads">
+          <metrics complexity="7" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="21" elements="24" coveredelements="24"/>
+        </class>
+        <line num="19" type="method" name="compile" visibility="public" complexity="2" crap="2" count="7"/>
+        <line num="21" type="stmt" count="7"/>
+        <line num="23" type="stmt" count="7"/>
+        <line num="25" type="stmt" count="7"/>
+        <line num="26" type="stmt" count="5"/>
+        <line num="27" type="stmt" count="5"/>
+        <line num="28" type="stmt" count="5"/>
+        <line num="29" type="stmt" count="5"/>
+        <line num="32" type="stmt" count="7"/>
+        <line num="40" type="method" name="phpTranslations" visibility="private" complexity="1" crap="1" count="5"/>
+        <line num="42" type="stmt" count="5"/>
+        <line num="44" type="stmt" count="5"/>
+        <line num="45" type="stmt" count="5"/>
+        <line num="47" type="stmt" count="5"/>
+        <line num="48" type="stmt" count="5"/>
+        <line num="56" type="method" name="jsonTranslations" visibility="private" complexity="4" crap="4" count="6"/>
+        <line num="58" type="stmt" count="6"/>
+        <line num="60" type="stmt" count="6"/>
+        <line num="61" type="stmt" count="5"/>
+        <line num="62" type="stmt" count="5"/>
+        <line num="63" type="stmt" count="5"/>
+        <line num="64" type="stmt" count="5"/>
+        <line num="66" type="stmt" count="5"/>
+        <line num="71" type="stmt" count="5"/>
+        <metrics loc="74" ncloc="56" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="21" elements="24" coveredelements="24"/>
+      </file>
+    </package>
+    <package name="Zen\Zorah">
+      <file name="/Users/vince/Dev/zenphp/components/zorah/src/Zorah.php">
+        <class name="Zen\Zorah\Zorah" namespace="Zen\Zorah">
+          <metrics complexity="19" methods="10" coveredmethods="10" conditionals="0" coveredconditionals="0" statements="45" coveredstatements="45" elements="55" coveredelements="55"/>
+        </class>
+        <line num="37" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="8"/>
+        <line num="39" type="stmt" count="8"/>
+        <line num="41" type="stmt" count="8"/>
+        <line num="42" type="stmt" count="1"/>
+        <line num="44" type="stmt" count="1"/>
+        <line num="47" type="stmt" count="7"/>
+        <line num="53" type="method" name="runProduction" visibility="protected" complexity="2" crap="2" count="1"/>
+        <line num="55" type="stmt" count="1"/>
+        <line num="56" type="stmt" count="1"/>
+        <line num="59" type="stmt" count="1"/>
+        <line num="61" type="stmt" count="1"/>
+        <line num="70" type="method" name="makeLocales" visibility="public" complexity="3" crap="3" count="8"/>
+        <line num="72" type="stmt" count="8"/>
+        <line num="74" type="stmt" count="8"/>
+        <line num="76" type="stmt" count="8"/>
+        <line num="77" type="stmt" count="8"/>
+        <line num="78" type="stmt" count="8"/>
+        <line num="79" type="stmt" count="8"/>
+        <line num="83" type="stmt" count="8"/>
+        <line num="89" type="method" name="clearTranslations" visibility="public" complexity="1" crap="1" count="32"/>
+        <line num="91" type="stmt" count="32"/>
+        <line num="99" type="method" name="makeTranslations" visibility="protected" complexity="2" crap="2" count="8"/>
+        <line num="101" type="stmt" count="8"/>
+        <line num="103" type="stmt" count="8"/>
+        <line num="104" type="stmt" count="8"/>
+        <line num="105" type="stmt" count="8"/>
+        <line num="106" type="stmt" count="8"/>
+        <line num="107" type="stmt" count="8"/>
+        <line num="110" type="stmt" count="8"/>
+        <line num="118" type="method" name="translatePhp" visibility="protected" complexity="1" crap="1" count="8"/>
+        <line num="120" type="stmt" count="8"/>
+        <line num="122" type="stmt" count="8"/>
+        <line num="123" type="stmt" count="8"/>
+        <line num="125" type="stmt" count="8"/>
+        <line num="126" type="stmt" count="8"/>
+        <line num="134" type="method" name="translateJson" visibility="protected" complexity="4" crap="4" count="8"/>
+        <line num="136" type="stmt" count="8"/>
+        <line num="138" type="stmt" count="8"/>
+        <line num="139" type="stmt" count="8"/>
+        <line num="140" type="stmt" count="8"/>
+        <line num="141" type="stmt" count="8"/>
+        <line num="142" type="stmt" count="8"/>
+        <line num="144" type="stmt" count="8"/>
+        <line num="149" type="stmt" count="1"/>
+        <line num="157" type="method" name="toArray" visibility="public" complexity="1" crap="1" count="5"/>
+        <line num="159" type="stmt" count="5"/>
+        <line num="160" type="stmt" count="5"/>
+        <line num="161" type="stmt" count="5"/>
+        <line num="169" type="method" name="jsonSerialize" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="171" type="stmt" count="1"/>
+        <line num="172" type="stmt" count="1"/>
+        <line num="173" type="stmt" count="1"/>
+        <line num="179" type="method" name="toJson" visibility="public" complexity="2" crap="2" count="1"/>
+        <line num="181" type="stmt" count="1"/>
+        <line num="183" type="stmt" count="1"/>
+        <metrics loc="186" ncloc="127" classes="1" methods="10" coveredmethods="10" conditionals="0" coveredconditionals="0" statements="45" coveredstatements="45" elements="55" coveredelements="55"/>
+      </file>
+      <file name="/Users/vince/Dev/zenphp/components/zorah/src/ZorahServiceProvider.php">
+        <class name="Zen\Zorah\ZorahServiceProvider" namespace="Zen\Zorah">
+          <metrics complexity="3" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
+        </class>
+        <line num="17" type="method" name="boot" visibility="public" complexity="2" crap="2" count="32"/>
+        <line num="19" type="stmt" count="32"/>
+        <line num="20" type="stmt" count="32"/>
+        <line num="21" type="stmt" count="32"/>
+        <line num="22" type="stmt" count="32"/>
+        <line num="29" type="method" name="register" visibility="public" complexity="1" crap="1" count="32"/>
+        <line num="32" type="stmt" count="32"/>
+        <metrics loc="35" ncloc="29" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
+      </file>
+    </package>
+    <metrics files="5" loc="442" ncloc="310" classes="4" methods="19" coveredmethods="19" conditionals="0" coveredconditionals="0" statements="93" coveredstatements="93" elements="112" coveredelements="112"/>
+  </project>
+</coverage>

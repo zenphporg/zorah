@@ -1,6 +1,7 @@
 ![Zen Foundation](https://raw.githubusercontent.com/zenphporg/.github/main/img/zenphp.png)
 
 <p align="center">
+	<a href="https://github.com/zenphporg/zorah/blob/main/clover.xml"><img src="https://img.shields.io/badge/dynamic/xml?color=success&label=coverage&query=round%28%2F%2Fcoverage%2Fproject%2Fmetrics%2F%40coveredelements%20div%20%2F%2Fcoverage%2Fproject%2Fmetrics%2F%40elements%20%2A%20100%29&suffix=%25&url=https%3A%2F%2Fraw.githubusercontent.com%2Fzenphporg%2Fzorah%2Fmain%2Fclover.xml" alt="Coverage"></a>
   <a href="https://github.com/zenphporg/zorah/actions"><img src="https://github.com/zenphporg/zorah/workflows/tests/badge.svg" alt="Build Status"></a>
   <a href="https://packagist.org/packages/zenphp/zorah"><img src="https://img.shields.io/packagist/dt/zenphp/zorah" alt="Total Downloads"></a>
   <a href="https://packagist.org/packages/zenphp/zorah"><img src="https://img.shields.io/packagist/v/zenphp/zorah" alt="Latest Stable Version"></a>

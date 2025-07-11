@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Zen\Zorah\Console;
 
 use Illuminate\Console\Command;
@@ -19,63 +21,58 @@ class TranslationGenerator extends Command
   /**
    * The console command description.
    *
-   * @var string|null
+   * @var string
    */
   protected $description = 'Generate translation js file for including in build process';
-
-  /**
-   * Filesystem instance for moving files.
-   *
-   * @var Filesystem
-   */
-  protected $files;
 
   /**
    * Create a new console command instance.
    *
    * @return void
    */
-  public function __construct(Filesystem $files)
+  public function __construct(/**
+   * Filesystem instance for moving files.
+   */
+    protected Filesystem $files)
   {
     parent::__construct();
-
-    $this->files = $files;
   }
 
   /**
    * Process the command.
-   *
-   * @return void
    */
-  public function handle()
+  public function handle(): void
   {
     $path = $this->argument('path');
+    if (! is_string($path)) {
+      $this->error('Invalid path argument');
 
-    $translations = $this->generate();
+      return;
+    }
+
+    $file = $this->generate();
 
     $this->makeDirectory($path);
 
-    $this->files->put($path, $translations);
+    $this->files->put($path, $file);
 
     $this->info('Translations file generated.');
   }
 
   /**
    * Generate the translations for the file.
-   *
-   * @return File
    */
-  public function generate()
+  public function generate(): string
   {
-    $locales = [];
-
     $locales = [];
 
     $directories = File::directories(lang_path());
 
-    foreach ($directories as $dir) {
-      $path = str_replace(lang_path().DIRECTORY_SEPARATOR, '', $dir);
-      $locales[] = $path;
+    foreach ($directories as $directory) {
+      if (is_string($directory)) {
+        $path = str_replace(lang_path().DIRECTORY_SEPARATOR, '', $directory);
+        $locales[] = $path;
+      }
     }
 
     $json = TranslationPayload::compile($locales)->toJson();
@@ -94,11 +91,8 @@ EOT;
 
   /**
    * Make the directory if it doesn't exist.
-   *
-   * @param  string  $path
-   * @return string
    */
-  protected function makeDirectory($path)
+  protected function makeDirectory(string $path): string
   {
     if (! $this->files->isDirectory(dirname($path))) {
       $this->files->makeDirectory(dirname($path), 0777, true, true);
