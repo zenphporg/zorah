@@ -1,0 +1,80 @@
+name: Pull Request Management
+on:
+  pull_request:
+    types: [opened, ready_for_review]
+    branches: ['**']
+
+jobs:
+  manage-pr:
+    if: github.actor != 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Handle PR to maintenance branches
+        if: github.base_ref != 'main'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+
+            // Close the PR
+            await github.rest.pulls.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: pr.number,
+              state: 'closed'
+            });
+
+            // Add explanatory comment
+            await github.rest.issues.createComment({
+              issue_number: pr.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `❌ **PR automatically closed**\n\n@${pr.user.login} PRs to maintenance branches (\`${github.base_ref}\`) are not allowed.\n\nPlease create your PR against the \`main\` branch instead.\n\n**Next steps:**\n1. Create a new PR targeting \`main\`\n2. Enable "Allow edits from maintainers" when creating the PR\n\nSee [CONTRIBUTING.md](https://github.com/zenphporg/zorah/blob/main/CONTRIBUTING.md) for more details.`
+            });
+
+      - name: Handle PR to main branch
+        if: github.base_ref == 'main'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+
+            if (!pr.maintainer_can_modify) {
+              // Convert to draft
+              await github.rest.pulls.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: pr.number,
+                draft: true
+              });
+
+              // Add comment requesting maintainer access
+              await github.rest.issues.createComment({
+                issue_number: pr.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: `👋 Hi @${pr.user.login}!\n\nThis PR has been converted to **draft** because maintainer access is not enabled.\n\n**To proceed:**\n1. Enable "Allow edits from maintainers" (checkbox when editing PR description)\n2. Convert back from draft to ready for review\n\n⚠️ **Note:** Draft PRs are not reviewed. Please complete the steps above to get your PR reviewed and merged.\n\nSee [CONTRIBUTING.md](https://github.com/zenphporg/zorah/blob/main/CONTRIBUTING.md) for more details.\n\nThanks!`
+              });
+
+            } else {
+              // Maintainer access is enabled, assign reviewer
+              try {
+                await github.rest.pulls.requestReviewers({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: pr.number,
+                  reviewers: ['secondmanveran']
+                });
+              } catch (error) {
+                console.log('Could not assign reviewer:', error.message);
+                // Continue with welcome comment even if reviewer assignment fails
+              }
+
+              // Add a welcome comment
+              await github.rest.issues.createComment({
+                issue_number: pr.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: `✅ Thanks @${pr.user.login}! Maintainer access is enabled. This PR has been assigned for review.`
+              });
+            }

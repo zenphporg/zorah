@@ -226,3 +226,24 @@ return [
 // Dashbaord.js
 __('messages.welcome', { name: 'Zorah', count: 8 }); // Welcome, Zorah! There are 8 apples.
 ```
+
+## Maintenance Branches
+
+Zorah follows semantic versioning using maintenance branches:
+
+- `main` - Latest development version
+- `N.x` - Maintenance branches for major versions (e.g., `1.x`, `2.x`)
+
+---
+
+## Contributing
+
+Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+## Security Vulnerabilities
+
+Please review [our security policy](https://github.com/zenphporg/zorah/security/policy) on how to report security vulnerabilities.
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
