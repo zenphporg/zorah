@@ -30,10 +30,10 @@ var n = function (n, t, u) {
       return r.mixin({
         methods: {
           t: function (r, u, i) {
-            return void 0 === i && (i = t), n(r, u, i)
+            return (void 0 === i && (i = t), n(r, u, i))
           },
           trans: function (r, u, i) {
-            return void 0 === i && (i = t), n(r, u, i)
+            return (void 0 === i && (i = t), n(r, u, i))
           },
         },
       })
@@ -71,10 +71,10 @@ var n = function (n, t, u) {
       return n.mixin({
         methods: {
           t: function (n, t, i) {
-            return void 0 === i && (i = r), u(n, t, i)
+            return (void 0 === i && (i = r), u(n, t, i))
           },
           trans: function (n, t, i) {
-            return void 0 === i && (i = r), u(n, t, i)
+            return (void 0 === i && (i = r), u(n, t, i))
           },
         },
       })
