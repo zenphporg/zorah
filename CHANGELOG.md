@@ -1,5 +1,30 @@
 # Release Notes
 
+## [1.0.6](https://github.com/zenphporg/zorah/compare/v1.0.5...v1.0.6) (2025-10-24)
+
+
+* Merge branch 'cli-20.1.0' ([0489756](https://github.com/zenphporg/zorah/commit/0489756422b5ff24314bef8b1bda1bff62ab4d56))
+* Merge branch 'config-conventional-20.0.0' ([21fe266](https://github.com/zenphporg/zorah/commit/21fe2661c18de08685e7a3a6528096ce62fe0763))
+* Merge branch 'github-12.0.0' ([89e7cf3](https://github.com/zenphporg/zorah/commit/89e7cf31ce81f71172f1ec3133a0765c0b0dd4cd))
+* Merge branch 'jsdom-27.0.1' ([1114703](https://github.com/zenphporg/zorah/commit/1114703c78f2e56320748e6a1d0ca9939325a969))
+* Merge branch 'semantic-release-25.0.1' ([f94c61e](https://github.com/zenphporg/zorah/commit/f94c61ec5fbc640d381e765139bc2f65da48a74e))
+
+
+### Code Refactoring
+
+* completed dependency updates ([5c85c5b](https://github.com/zenphporg/zorah/commit/5c85c5be95a64390ae812553cf8bb518f73ecf0e))
+
+
+### Maintenance
+
+* **deps-dev:** bump @commitlint/cli from 19.8.1 to 20.1.0 ([55bd720](https://github.com/zenphporg/zorah/commit/55bd720925f52fb03704ecb2581babd1488595af))
+* **deps-dev:** bump @commitlint/config-conventional ([4d57dc1](https://github.com/zenphporg/zorah/commit/4d57dc1c01835f5626349819909de44d79f138d8))
+* **deps-dev:** bump @semantic-release/github from 11.0.6 to 12.0.0 ([af5d6fd](https://github.com/zenphporg/zorah/commit/af5d6fd07d016fece61ea1a505a4a64f5729dc9a))
+* **deps-dev:** bump jsdom from 26.1.0 to 27.0.1 ([a84cca6](https://github.com/zenphporg/zorah/commit/a84cca600ebb2b7e5c07e521fa49d8251032f75e))
+* **deps-dev:** bump semantic-release from 24.2.9 to 25.0.1 ([9d9796f](https://github.com/zenphporg/zorah/commit/9d9796f26c33b1361ade1ca82d6c436ad78bbf65))
+* dev deps updates ([a8967d4](https://github.com/zenphporg/zorah/commit/a8967d42e1b6d52adccd7c19aafa4d220a966799))
+* **workflows:** update workflows ([ad0a68c](https://github.com/zenphporg/zorah/commit/ad0a68cea359c88864cd73e819c9bc47ab6cfdc1))
+
 ## [1.0.5](https://github.com/zenphporg/zorah/compare/v1.0.4...v1.0.5) (2025-07-11)
 
 
