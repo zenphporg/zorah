@@ -57,8 +57,13 @@
 >>>>>>> jsdom-27.0.1
     "microbundle": "^0.15.1",
     "prettier": "^3.6.2",
+<<<<<<< HEAD
     "semantic-release": "^24.2.9",
     "typescript": "^5.9.3",
+=======
+    "semantic-release": "^25.0.1",
+    "typescript": "^5.8.3",
+>>>>>>> semantic-release-25.0.1
     "vitest": "^3.2.4"
   },
   "lint-staged": {
