@@ -37,14 +37,14 @@
     "@commitlint/config-conventional": "^19.8.1",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^11.0.3",
+    "@semantic-release/github": "^11.0.6",
     "husky": "^9.1.7",
     "jsdom": "^26.1.0",
-    "lint-staged": "^16.1.2",
+    "lint-staged": "^16.2.6",
     "microbundle": "^0.15.1",
     "prettier": "^3.6.2",
-    "semantic-release": "^24.2.6",
-    "typescript": "^5.8.3",
+    "semantic-release": "^24.2.9",
+    "typescript": "^5.9.3",
     "vitest": "^3.2.4"
   },
   "lint-staged": {
