@@ -1,5 +1,12 @@
 # Release Notes
 
+## [1.0.7](https://github.com/zenphporg/zorah/compare/v1.0.6...v1.0.7) (2025-10-24)
+
+
+### Code or other task
+
+* rebuild javascript for latest dependencies ([ac1fdc0](https://github.com/zenphporg/zorah/commit/ac1fdc02816b133cde98d3ac939c2c238ba9a501))
+
 ## [1.0.6](https://github.com/zenphporg/zorah/compare/v1.0.5...v1.0.6) (2025-10-24)
 
 
