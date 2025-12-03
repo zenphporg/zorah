@@ -27,13 +27,13 @@ declare module 'zorah-js' {
 }
 
 // Extend Vue's global properties
-declare module '@vue/runtime-core' {
+declare module 'vue' {
   interface ComponentCustomProperties {
     __: (key: string, replace?: { [key: string]: string | number }, config?: import('zorah-js').ZorahConfig) => string;
     trans: (
       key: string,
       replace?: { [key: string]: string | number },
-      config?: import('zorah-js').ZorahConfig,
+      config?: import('zorah-js').ZorahConfig
     ) => string;
   }
 }

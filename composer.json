@@ -15,13 +15,13 @@
     "illuminate/support": "^11.0|^12.0"
   },
   "require-dev": {
-    "zenphp/fixr": "^1.0.3",
-    "pestphp/pest": "^3.8.2",
-    "pestphp/pest-plugin-type-coverage": "^3.6.0",
+    "zenphp/fixr": "^1.0.4",
+    "pestphp/pest": "^3.8.4",
+    "pestphp/pest-plugin-type-coverage": "^3.6.1",
     "pestphp/pest-plugin-laravel": "^3.2.0",
     "mockery/mockery": "^1.6.12",
-    "rector/rector": "^2.1",
-    "orchestra/testbench": "^10.4"
+    "rector/rector": "^2.2.11",
+    "orchestra/testbench": "^10.8.0"
   },
   "autoload": {
     "psr-4": {

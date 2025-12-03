@@ -1,6 +1,6 @@
 {
   "name": "zorah-js",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "files": [
     "src/js/index.d.ts",
     "dist"
@@ -27,25 +27,27 @@
     "prebuild": "rm -r ./dist/*"
   },
   "mangle": {
-    "regex": "^_(?!query)"
+    "regex": "^_[^_]"
   },
   "dependencies": {
+    "baseline-browser-mapping": "^2.9.0",
+    "caniuse-lite": "^1.0.30001759",
     "qs": "~6.14.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.8.1",
+    "@commitlint/cli": "^20.1.0",
     "@commitlint/config-conventional": "^20.0.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^12.0.0",
+    "@semantic-release/github": "^12.0.2",
     "husky": "^9.1.7",
-    "jsdom": "^27.0.1",
-    "lint-staged": "^16.2.6",
+    "jsdom": "^27.2.0",
+    "lint-staged": "^16.2.7",
     "microbundle": "^0.15.1",
-    "prettier": "^3.6.2",
-    "semantic-release": "^25.0.1",
+    "prettier": "^3.7.4",
+    "semantic-release": "^25.0.2",
     "typescript": "^5.9.3",
-    "vitest": "^3.2.4"
+    "vitest": "^4.0.15"
   },
   "lint-staged": {
     "*.{js,json,md}": "prettier --write .",
