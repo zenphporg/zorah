@@ -1,5 +1,17 @@
 # Release Notes
 
+# [2.0.0](https://github.com/zenphporg/zorah/compare/v1.0.7...v2.0.0) (2025-12-03)
+
+
+### Breaking
+
+* updated for vue > 3.5 ([9416a4a](https://github.com/zenphporg/zorah/commit/9416a4a6e456e041e25de90e6cb4a7cc16a6792e))
+
+
+### Maintenance
+
+* style fixes ([fc86a6b](https://github.com/zenphporg/zorah/commit/fc86a6b6ef8646392a25ebef08d2aaab9d822f30))
+
 ## [1.0.7](https://github.com/zenphporg/zorah/compare/v1.0.6...v1.0.7) (2025-10-24)
 
 
