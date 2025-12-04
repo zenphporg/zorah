@@ -1,5 +1,17 @@
 # Release Notes
 
+## [2.0.1](https://github.com/zenphporg/zorah/compare/v2.0.0...v2.0.1) (2025-12-04)
+
+
+### Bug Fixes
+
+* updated readme and types for inertia ([dc5861b](https://github.com/zenphporg/zorah/commit/dc5861b11e9bb47f4502368824f6fa6b6ddb13d6))
+
+
+### Maintenance
+
+* update readme ([f048f72](https://github.com/zenphporg/zorah/commit/f048f72774c69e1b16ffed3dfa99d46d5d8ed3e7))
+
 # [2.0.0](https://github.com/zenphporg/zorah/compare/v1.0.7...v2.0.0) (2025-12-03)
 
 
