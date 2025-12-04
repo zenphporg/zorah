@@ -30,8 +30,15 @@ Zorah supports all versions of Laravel from `11.x` onwards, and all modern brows
 Install Zorah into your Laravel app via composer:
 
 ```bash
-composer require zenphp/zorah --dev
+composer require zenphp/zorah
 ```
+
+### Vue Version Compatibility
+
+| Vue Version | Zorah Version | Install Command |
+|-------------|---------------|-----------------|
+| 3.5+        | 2.x (latest)  | `composer require zenphp/zorah` |
+| 3.0 - 3.4   | 1.0.7         | `composer require zenphp/zorah:1.0.7` |
 
 ## Setup
 
@@ -67,11 +74,7 @@ Create an alias to make importing Zorah's core source files easier:
 export default defineConfig({
   resolve: {
     alias: {
-      // for other frameworks
-      'zorah-js': resolve(__dirname, 'vendor/zenphp/zorah/dist/client.js'),
-      // for vue
       'zorah-js': resolve(__dirname, 'vendor/zenphp/zorah/dist/index.js'),
-      zorah: resolve(__dirname, 'vendor/zenphp/zorah/dist/vue.js'),
     },
   },
 });
@@ -84,11 +87,7 @@ export default defineConfig({
 const path = require('path');
 
 mix.alias({
-  // for other frameworks
-  'zorah-js': path.resolve(__dirname, 'vendor/zenphp/zorah/dist/client.js'),
-  // for Vue
   'zorah-js': path.resolve(__dirname, 'vendor/zenphp/zorah/dist/index.js'),
-  zorah: path.resolve(__dirname, 'vendor/zenphp/zorah/dist/vue.js'),
 });
 
 // Mix v5
@@ -97,11 +96,7 @@ const path = require('path');
 mix.webpackConfig({
   resolve: {
     alias: {
-      // for other frameworks
-      'zorah-js': path.resolve(__dirname, 'vendor/zenphp/zorah/dist/client.js'),
-      // for Vue
       'zorah-js': path.resolve(__dirname, 'vendor/zenphp/zorah/dist/index.js'),
-      zorah: path.resolve(__dirname, 'vendor/zenphp/zorah/dist/vue.js'),
     },
   },
 });
@@ -119,7 +114,7 @@ Finally, import and use Zorah like any other JavaScript library.
 
 ```js
 import { ZorahVue } from 'zorah'
-import { Zorah } from '../zorah.js'
+import { Zorah } from './zorah.js'
 
 
 // ...
@@ -138,7 +133,7 @@ Zorah includes a vue plugin to make it easy to use `trans()` or `__()` helpers t
 
 ```js
 import { ZorahVue } from 'zorah';
-import { Zorah } from '../zorah.js';
+import { Zorah } from './zorah.js';
 ```
 
 Then use it in your app (register Zorah plugin):
