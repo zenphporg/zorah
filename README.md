@@ -113,7 +113,7 @@ Add the following to your app.blade.php so that translation functions will use t
 Finally, import and use Zorah like any other JavaScript library.
 
 ```js
-import { ZorahVue } from 'zorah'
+import { ZorahVue } from 'zorah-js'
 import { Zorah } from './zorah.js'
 
 
@@ -132,7 +132,7 @@ trans(key: string, replacers: array, config: Zorah)
 Zorah includes a vue plugin to make it easy to use `trans()` or `__()` helpers throughout your app:
 
 ```js
-import { ZorahVue } from 'zorah';
+import { ZorahVue } from 'zorah-js';
 import { Zorah } from './zorah.js';
 ```
 
@@ -142,6 +142,26 @@ Then use it in your app (register Zorah plugin):
 ...
 .use(ZorahVue, Zorah)
 ```
+
+#### TypeScript with Inertia
+
+If you're using TypeScript with Laravel Inertia, you'll need to add the `__` and `trans` methods to your `globals.d.ts` file to get proper type support in your Vue components:
+
+```ts
+// resources/js/globals.d.ts
+
+declare module 'vue' {
+  interface ComponentCustomProperties {
+    $inertia: typeof Router;
+    $page: Page;
+    $headManager: ReturnType<typeof createHeadManager>;
+    __: (key: string, replace?: { [key: string]: string | number }, config?: import('zorah-js').ZorahConfig) => string;
+    trans: (key: string, replace?: { [key: string]: string | number }, config?: import('zorah-js').ZorahConfig) => string;
+  }
+}
+```
+
+This allows you to use `__()` and `trans()` in your Vue components with full type checking.
 
 #### Svelte
 

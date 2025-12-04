@@ -1,11 +1,12 @@
 // File: index.d.ts
+export {};
 
 declare module 'zorah-js' {
   export interface ZorahConfig {
     translations: {
       [locale: string]: {
         php: { [key: string]: any };
-        json: { [key: string]: string };
+        json: { [key: string]: string } | string[];
       };
     };
   }
@@ -24,18 +25,6 @@ declare module 'zorah-js' {
   export const ZorahSSR: {
     install(app: any, options?: ZorahOptions): void;
   };
-}
-
-// Extend Vue's global properties
-declare module 'vue' {
-  interface ComponentCustomProperties {
-    __: (key: string, replace?: { [key: string]: string | number }, config?: import('zorah-js').ZorahConfig) => string;
-    trans: (
-      key: string,
-      replace?: { [key: string]: string | number },
-      config?: import('zorah-js').ZorahConfig,
-    ) => string;
-  }
 }
 
 // Extend the global Window interface
