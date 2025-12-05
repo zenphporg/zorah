@@ -1,5 +1,17 @@
 # Release Notes
 
+# [2.1.0](https://github.com/zenphporg/zorah/compare/v2.0.1...v2.1.0) (2025-12-05)
+
+
+### Features
+
+* fix issues and convert to typescript ([212c92d](https://github.com/zenphporg/zorah/commit/212c92df6097599cda9a82d908b49de494fdb282))
+
+
+### Maintenance
+
+* update test.yml for new test commands ([9b52e56](https://github.com/zenphporg/zorah/commit/9b52e5635ed82bda873dc819783704b60d9129a8))
+
 ## [2.0.1](https://github.com/zenphporg/zorah/compare/v2.0.0...v2.0.1) (2025-12-04)
 
 
