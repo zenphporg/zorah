@@ -1,16 +1,23 @@
 var n = function (n, t, u) {
     var i = window.locale,
-      c = null
+      l = null
     try {
+      var o
       if (
-        (c = n.split('.').reduce(function (n, r) {
-          return n[r] || null
-        }, u.translations[i].php))
+        (l = n.split('.').reduce(
+          function (n, r) {
+            var t
+            return null != (t = null == n ? void 0 : n[r]) ? t : null
+          },
+          null == u || null == (o = u.translations[i]) ? void 0 : o.php
+        ))
       )
-        return r(c, t)
+        return r(l, t)
     } catch (n) {}
     try {
-      if ((c = u.translations[i].json[n])) return r(c, t)
+      var e,
+        a = null == u || null == (e = u.translations[i]) ? void 0 : e.json
+      if ((a && !Array.isArray(a) && (l = a[n]), l)) return r(l, t)
     } catch (n) {}
     return r(n, t)
   },
@@ -21,7 +28,7 @@ var n = function (n, t, u) {
       : (Object.entries(r).forEach(function (n) {
           var r = n[0],
             u = n[1]
-          t = t.toString().replace(':' + r, u)
+          t = t.toString().replace(':' + r, String(u))
         }),
         t)
   },
@@ -40,18 +47,32 @@ var n = function (n, t, u) {
     },
   },
   u = function (n, r, t) {
-    var u = process.env.LOCALE,
-      c = null
+    var u,
+      l,
+      o =
+        void 0 !== import.meta && null != (u = import.meta.env) && u.VITE_LOCALE
+          ? import.meta.env.VITE_LOCALE
+          : 'undefined' != typeof process && null != (l = process.env) && l.LOCALE
+            ? process.env.LOCALE
+            : 'en',
+      e = null
     try {
+      var a
       if (
-        (c = n.split('.').reduce(function (n, r) {
-          return n[r] || null
-        }, t.translations[u].php))
+        (e = n.split('.').reduce(
+          function (n, r) {
+            var t
+            return null != (t = null == n ? void 0 : n[r]) ? t : null
+          },
+          null == t || null == (a = t.translations[o]) ? void 0 : a.php
+        ))
       )
-        return i(c, r)
+        return i(e, r)
     } catch (n) {}
     try {
-      if ((c = t.translations[u].json[n])) return i(c, r)
+      var c,
+        v = null == t || null == (c = t.translations[o]) ? void 0 : c.json
+      if ((v && !Array.isArray(v) && (e = v[n]), e)) return i(e, r)
     } catch (n) {}
     return i(n, r)
   },
@@ -62,11 +83,11 @@ var n = function (n, t, u) {
       : (Object.entries(r).forEach(function (n) {
           var r = n[0],
             u = n[1]
-          t = t.toString().replace(':' + r, u)
+          t = t.toString().replace(':' + r, String(u))
         }),
         t)
   },
-  c = {
+  l = {
     install: function (n, r) {
       return n.mixin({
         methods: {
@@ -80,4 +101,4 @@ var n = function (n, t, u) {
       })
     },
   }
-export { c as ZorahSSR, t as ZorahVue, n as trans }
+export { l as ZorahSSR, t as ZorahVue, n as trans }

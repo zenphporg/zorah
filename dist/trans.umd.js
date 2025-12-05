@@ -11,24 +11,31 @@
       ? n
       : (Object.entries(e).forEach(function (n) {
           var e = n[0],
-            f = n[1]
-          t = t.toString().replace(':' + e, f)
+            r = n[1]
+          t = t.toString().replace(':' + e, String(r))
         }),
         t)
   }
-  return function (e, t, f) {
-    var i = window.locale,
-      o = null
+  return function (e, t, r) {
+    var u = window.locale,
+      i = null
     try {
+      var l
       if (
-        (o = e.split('.').reduce(function (n, e) {
-          return n[e] || null
-        }, f.translations[i].php))
+        (i = e.split('.').reduce(
+          function (n, e) {
+            var t
+            return null != (t = null == n ? void 0 : n[e]) ? t : null
+          },
+          null == r || null == (l = r.translations[u]) ? void 0 : l.php
+        ))
       )
-        return n(o, t)
+        return n(i, t)
     } catch (n) {}
     try {
-      if ((o = f.translations[i].json[e])) return n(o, t)
+      var o,
+        f = null == r || null == (o = r.translations[u]) ? void 0 : o.json
+      if ((f && !Array.isArray(f) && (i = f[e]), i)) return n(i, t)
     } catch (n) {}
     return n(e, t)
   }

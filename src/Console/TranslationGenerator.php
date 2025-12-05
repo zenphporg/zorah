@@ -16,14 +16,14 @@ class TranslationGenerator extends Command
    *
    * @var string
    */
-  protected $signature = 'zorah:generate {path=./resources/js/zorah.js}';
+  protected $signature = 'zorah:generate {path?} {--js : Generate JavaScript instead of TypeScript}';
 
   /**
    * The console command description.
    *
    * @var string
    */
-  protected $description = 'Generate translation js file for including in build process';
+  protected $description = 'Generate translation file for including in build process';
 
   /**
    * Create a new console command instance.
@@ -43,14 +43,21 @@ class TranslationGenerator extends Command
    */
   public function handle(): void
   {
+    $useJs = $this->option('js');
     $path = $this->argument('path');
+
+    if ($path === null) {
+      $extension = $useJs ? 'js' : 'ts';
+      $path = "./resources/js/zorah.{$extension}";
+    }
+
     if (! is_string($path)) {
       $this->error('Invalid path argument');
 
       return;
     }
 
-    $file = $this->generate();
+    $file = $useJs ? $this->generateJs() : $this->generateTs();
 
     $this->makeDirectory($path);
 
@@ -60,9 +67,49 @@ class TranslationGenerator extends Command
   }
 
   /**
-   * Generate the translations for the file.
+   * Generate the TypeScript translations file.
    */
-  public function generate(): string
+  public function generateTs(): string
+  {
+    $json = $this->getTranslationsJson();
+
+    return <<<EOT
+import type { ZorahConfig } from 'zorah-js'
+
+const Zorah: ZorahConfig = { translations: $json }
+
+if (typeof window !== 'undefined' && typeof window.Zorah !== 'undefined') {
+  Object.assign(Zorah.translations, window.Zorah.translations);
+}
+
+export { Zorah }
+
+EOT;
+  }
+
+  /**
+   * Generate the JavaScript translations file.
+   */
+  public function generateJs(): string
+  {
+    $json = $this->getTranslationsJson();
+
+    return <<<EOT
+const Zorah = { translations: $json }
+
+if (typeof window !== 'undefined' && typeof window.Zorah !== 'undefined') {
+  Object.assign(Zorah.translations, window.Zorah.translations);
+}
+
+export { Zorah }
+
+EOT;
+  }
+
+  /**
+   * Get the translations JSON string.
+   */
+  protected function getTranslationsJson(): string
   {
     $locales = [];
 
@@ -75,18 +122,15 @@ class TranslationGenerator extends Command
       }
     }
 
-    $json = TranslationPayload::compile($locales)->toJson();
+    return TranslationPayload::compile($locales)->toJson();
+  }
 
-    return <<<EOT
-const Zorah = { translations: $json }
-
-if (typeof window !== 'undefined' && typeof window.Zorah !== 'undefined') {
-  Object.assign(Zorah.translations, window.Zorah.translations);
-}
-
-export { Zorah }
-
-EOT;
+  /**
+   * Generate the translations for the file.
+   */
+  public function generate(): string
+  {
+    return $this->generateJs();
   }
 
   /**

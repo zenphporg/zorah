@@ -41,7 +41,7 @@ class TranslationPayload
   {
     $path = lang_path($locale);
 
-    return collect(File::allFiles($path))->flatMap(function (SplFileInfo $file) use ($locale) {
+    return collect(File::allFiles($path))->flatMap(function (SplFileInfo $file) use ($locale): array {
       $key = ($translation = $file->getBasename('.php'));
 
       return [$key => trans($translation, [], $locale)];
