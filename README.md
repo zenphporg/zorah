@@ -45,6 +45,8 @@ composer require zenphp/zorah
 | 3.5+        | 2.x (latest)  | `composer require zenphp/zorah` |
 | 3.0 - 3.4   | 1.0.7         | `composer require zenphp/zorah:1.0.7` |
 
+> **Note:** As of v2.1, the CommonJS build is now `dist/index.cjs`. ESM users (Vite, etc.) are unaffected.
+
 ## Setup
 
 #### JavaScript Frameworks

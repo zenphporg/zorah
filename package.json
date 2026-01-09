@@ -1,6 +1,6 @@
 {
   "name": "zorah-js",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "files": [
     "dist"
   ],
@@ -10,18 +10,18 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.esm.js",
-      "require": "./dist/index.js",
+      "require": "./dist/index.cjs",
       "default": "./dist/index.esm.js"
     }
   },
-  "main": "./dist/index.js",
+  "main": "./dist/index.cjs",
   "module": "./dist/index.esm.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "fix": "bunx lint-staged",
     "cb": "composer update && bun update",
     "build": "bun build:esm && bun build:umd",
-    "build:esm": "microbundle -i ./src/ts/index.ts -o ./dist/index.js --format modern,esm --no-sourcemap --external none",
+    "build:esm": "microbundle -i ./src/ts/index.ts -o ./dist/index.js --format esm,cjs --no-sourcemap --external none",
     "build:npm": "microbundle -i ./src/ts/index.ts -o ./dist/index.js --format modern,esm --no-sourcemap",
     "build:umd": "microbundle -i ./src/ts/browser.ts -o ./dist/trans.js --format umd --name trans --no-sourcemap --external none",
     "typecheck": "tsc --noEmit",
