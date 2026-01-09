@@ -1,5 +1,12 @@
 # Release Notes
 
+## [2.1.1](https://github.com/zenphporg/zorah/compare/v2.1.0...v2.1.1) (2026-01-09)
+
+
+### Bug Fixes
+
+* added cjs build script for commonjs ([8b6a4b1](https://github.com/zenphporg/zorah/commit/8b6a4b11105e5898f492713e115f885e699ca03a))
+
 # [2.1.0](https://github.com/zenphporg/zorah/compare/v2.0.1...v2.1.0) (2025-12-05)
 
 
