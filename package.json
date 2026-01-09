@@ -19,7 +19,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "fix": "bunx lint-staged",
-    "cb": "composer update && bun update",
+    "cb": "composer update && bun update && sync-deps",
     "build": "bun build:esm && bun build:umd",
     "build:esm": "microbundle -i ./src/ts/index.ts -o ./dist/index.js --format esm,cjs --no-sourcemap --external none",
     "build:npm": "microbundle -i ./src/ts/index.ts -o ./dist/index.js --format modern,esm --no-sourcemap",
@@ -33,25 +33,25 @@
     "regex": "^_[^_]"
   },
   "dependencies": {
-    "baseline-browser-mapping": "^2.9.0",
-    "caniuse-lite": "^1.0.30001759",
-    "qs": "~6.14.0"
+    "baseline-browser-mapping": "^2.9.13",
+    "caniuse-lite": "^1.0.30001763",
+    "qs": "~6.14.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^20.1.0",
-    "@commitlint/config-conventional": "^20.0.0",
+    "@commitlint/cli": "^20.3.1",
+    "@commitlint/config-conventional": "^20.3.1",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^12.0.2",
     "husky": "^9.1.7",
-    "jsdom": "^27.2.0",
+    "jsdom": "^27.4.0",
     "lint-staged": "^16.2.7",
     "microbundle": "^0.15.1",
     "prettier": "^3.7.4",
     "semantic-release": "^25.0.2",
     "typescript": "^5.9.3",
-    "vitest": "^4.0.15",
-    "vue": "^3.5.25"
+    "vitest": "^4.0.16",
+    "vue": "^3.5.26"
   },
   "lint-staged": {
     "*.{js,ts,json,md}": "prettier --write .",

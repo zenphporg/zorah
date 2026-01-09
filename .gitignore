@@ -3,7 +3,7 @@
 .phpunit.cache
 vendor/
 composer.lock
-bun.lockb
+bun.lock
 node_modules/
 rector.php
 var/
