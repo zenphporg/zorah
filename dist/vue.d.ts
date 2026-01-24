@@ -1,5 +1,5 @@
-import { type ZorahConfig } from './client.js';
 import type { App } from 'vue';
+import { type ZorahConfig } from './client.js';
 export interface ZorahVuePlugin {
   install(app: App, options?: ZorahConfig): void;
 }

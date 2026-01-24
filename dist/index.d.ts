@@ -1,5 +1,5 @@
-import { trans, type ZorahConfig, type ReplacementValues } from './client.js';
-import { ZorahVue, type ZorahVuePlugin } from './vue.js';
+import { __, getConfig, setConfig, trans, type ReplacementValues, type ZorahConfig } from './client.js';
 import { ZorahSSR, type ZorahSSRPlugin } from './ssr.js';
-export { trans, ZorahVue, ZorahSSR };
-export type { ZorahConfig, ReplacementValues, ZorahVuePlugin, ZorahSSRPlugin };
+import { ZorahVue, type ZorahVuePlugin } from './vue.js';
+export { __, getConfig, setConfig, trans, ZorahSSR, ZorahVue };
+export type { ReplacementValues, ZorahConfig, ZorahSSRPlugin, ZorahVuePlugin };
