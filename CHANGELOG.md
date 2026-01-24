@@ -1,5 +1,18 @@
 # Release Notes
 
+## [2.1.2](https://github.com/zenphporg/zorah/compare/v2.1.1...v2.1.2) (2026-01-24)
+
+
+### Code Refactoring
+
+* add config object export for easier use ([7bf3394](https://github.com/zenphporg/zorah/commit/7bf3394e93e305f5c75a8f5b2e6e58591eaff493))
+
+
+### Maintenance
+
+* deps updates ([10ae8e8](https://github.com/zenphporg/zorah/commit/10ae8e8ee891e872132f6e92a568b18117e2f5e6))
+* update dependencies ([d986d0c](https://github.com/zenphporg/zorah/commit/d986d0cc513f8b93d5fc43850fd16bf1dcd44bc7))
+
 ## [2.1.1](https://github.com/zenphporg/zorah/compare/v2.1.0...v2.1.1) (2026-01-09)
 
 
