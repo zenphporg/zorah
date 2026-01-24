@@ -27,8 +27,6 @@ class TranslationGenerator extends Command
 
   /**
    * Create a new console command instance.
-   *
-   * @return void
    */
   public function __construct(/**
    * Filesystem instance for moving files.
@@ -75,6 +73,12 @@ class TranslationGenerator extends Command
 
     return <<<EOT
 import type { ZorahConfig } from 'zorah-js'
+
+declare global {
+  interface Window {
+    Zorah?: ZorahConfig
+  }
+}
 
 const Zorah: ZorahConfig = { translations: $json }
 

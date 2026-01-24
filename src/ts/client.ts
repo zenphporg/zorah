@@ -9,6 +9,20 @@ export interface ZorahConfig {
 
 export type ReplacementValues = { [key: string]: string | number };
 
+let _config: ZorahConfig | undefined;
+
+export const setConfig = (config: ZorahConfig): void => {
+  _config = config;
+};
+
+export const getConfig = (): ZorahConfig | undefined => {
+  return _config;
+};
+
+export const __ = (key: string, replace?: ReplacementValues): string => {
+  return trans(key, replace, _config);
+};
+
 export const trans = (key: string, replace?: ReplacementValues, Zorah?: ZorahConfig): string => {
   const locale = window.locale;
 
