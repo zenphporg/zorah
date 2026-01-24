@@ -1,5 +1,17 @@
 # Release Notes
 
+## [2.1.3](https://github.com/zenphporg/zorah/compare/v2.1.2...v2.1.3) (2026-01-24)
+
+
+### Bug Fixes
+
+* forgot to build new javascript ([a910a1e](https://github.com/zenphporg/zorah/commit/a910a1e24dfe306440941d5931f9aab7cd68aadf))
+
+
+### Maintenance
+
+* styles ([90cd340](https://github.com/zenphporg/zorah/commit/90cd3401a0ed1294921e7703347bd2ef06e1f684))
+
 ## [2.1.2](https://github.com/zenphporg/zorah/compare/v2.1.1...v2.1.2) (2026-01-24)
 
 
