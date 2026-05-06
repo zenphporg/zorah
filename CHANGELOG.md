@@ -1,5 +1,12 @@
 # Release Notes
 
+# [2.2.0](https://github.com/zenphporg/zorah/compare/v2.1.3...v2.2.0) (2026-05-06)
+
+
+### Features
+
+* update for laravel 13 compatibility ([8289a55](https://github.com/zenphporg/zorah/commit/8289a5508da4b543aa20d2832026698fb0fae5f5))
+
 ## [2.1.3](https://github.com/zenphporg/zorah/compare/v2.1.2...v2.1.3) (2026-01-24)
 
 
