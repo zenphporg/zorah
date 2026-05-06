@@ -1,6 +1,6 @@
 {
   "name": "zorah-js",
-  "version": "2.1.3",
+  "version": "2.2.0",
   "files": [
     "dist"
   ],
@@ -33,25 +33,25 @@
     "regex": "^_[^_]"
   },
   "dependencies": {
-    "baseline-browser-mapping": "^2.9.18",
-    "caniuse-lite": "^1.0.30001766",
-    "qs": "~6.14.1"
+    "baseline-browser-mapping": "^2.10.27",
+    "caniuse-lite": "^1.0.30001792",
+    "qs": "~6.14.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^20.3.1",
-    "@commitlint/config-conventional": "^20.3.1",
+    "@commitlint/cli": "^20.5.3",
+    "@commitlint/config-conventional": "^20.5.3",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^12.0.2",
+    "@semantic-release/github": "^12.0.6",
     "husky": "^9.1.7",
     "jsdom": "^27.4.0",
-    "lint-staged": "^16.2.7",
+    "lint-staged": "^16.4.0",
     "microbundle": "^0.15.1",
-    "prettier": "^3.8.1",
-    "semantic-release": "^25.0.2",
+    "prettier": "^3.8.3",
+    "semantic-release": "^25.0.3",
     "typescript": "^5.9.3",
-    "vitest": "^4.0.18",
-    "vue": "^3.5.27"
+    "vitest": "^4.1.5",
+    "vue": "^3.5.34"
   },
   "lint-staged": {
     "*.{js,ts,json,md}": "prettier --write .",

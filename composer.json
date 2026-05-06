@@ -10,17 +10,17 @@
   ],
   "require": {
     "php": "^8.4",
-    "illuminate/console": "^11.0|^12.0",
-    "illuminate/filesystem": "^11.0|^12.0",
-    "illuminate/support": "^11.0|^12.0"
+    "illuminate/console": "^11.0|^12.0|^13.0",
+    "illuminate/filesystem": "^11.0|^12.0|^13.0",
+    "illuminate/support": "^11.0|^12.0|^13.0"
   },
   "require-dev": {
     "mockery/mockery": "^1.6.12",
-    "orchestra/testbench": "^10.9.0",
-    "pestphp/pest": "^4.3.1",
-    "pestphp/pest-plugin-laravel": "^4.0.0",
-    "pestphp/pest-plugin-type-coverage": "^4.0.3",
-    "rector/rector": "^2.3.4",
+    "orchestra/testbench": "^10.11.0",
+    "pestphp/pest": "^4.7.0",
+    "pestphp/pest-plugin-laravel": "^4.1.0",
+    "pestphp/pest-plugin-type-coverage": "^4.0.4",
+    "rector/rector": "^2.4.2",
     "zenphp/fixr": "^1.0.4"
   },
   "autoload": {
@@ -56,15 +56,15 @@
       "bun run typecheck",
       "bun run format:check"
     ],
-    "test:feat": "./vendor/bin/pest --parallel",
-    "test:coverage": "./vendor/bin/pest --parallel --coverage-clover=clover.xml --min=100.0; php bin/clean-coverage",
+    "test:feat": "./vendor/bin/pest",
+    "test:p": "./vendor/bin/pest --parallel",
+    "test:coverage": "./vendor/bin/pest --parallel --coverage --coverage-clover=clover.xml --min=100.0; php bin/clean-coverage",
     "test:static": "./vendor/bin/phpstan analyze",
     "test": [
       "@test:types",
       "@test:static",
       "@test:lint",
-      "@test:types",
-      "@test:feat"
+      "@test:coverage"
     ]
   },
   "config": {
